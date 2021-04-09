@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>{{movie.title}} : </h2>
+  <div class="w-100 d-flex justify-content-between">
+    <h6 class="border-bottom border-dark">Release Date : {{movie.release_date}}</h6>
+    <h5>
+      <i class="mr-3 fa fa-hand-o-up" style="font-size: 22px;cursor:pointer" (click)="upvoteMovie(movie)"></i>
+      {{movie.upvotes}}
+    </h5>
+
+  </div>
+  <hr>
+  <div class="d-flex border-bottom">
+    <h5 class="p-2 font-weight-bold">Description : </h5>
+    <p class="p-2">{{movie.desc}}</p>
+  </div>
+    <h5 class="p-2 font-weight-bold">All Actors : </h5>
+
+
+
+
+
+  <table class="table table-bordered shadow text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Birth place</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let actor of movie.actors">
+        <th scope="row">{{actor.id}}</th>
+        <td>{{actor.name}} </td>
+        <td>{{actor.age}} </td>
+        <td>{{actor.birth_place}} </td>
+      <tr>
+    </tbody>
+  </table>
+
+
+
+
+</div>

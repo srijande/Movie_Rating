@@ -1,0 +1,28 @@
+ <div class="container">
+
+    <h2 >List of Movies : </h2>
+    <hr>
+
+
+  <table class="table table-bordered shadow text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col" (click)="order='id';reverse=!reverse" style="cursor:pointer">ID</th>
+        <th scope="col" (click)="order='title';reverse=!reverse" style="cursor:pointer">Title</th>
+        <th scope="col" (click)="order='release_date';reverse=!reverse" style="cursor:pointer">Release date</th>
+        <th scope="col" (click)="order='upvotes';reverse=!reverse" style="cursor:pointer">Upvotes</th>
+        <th scope="col" style="cursor:pointer">Actors</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies | orderBy: order:reverse">
+        <th scope="row">{{movie.id}}</th>
+        <td>{{movie.title}}</td>
+        <td>{{movie.release_date}}</td>
+        <td><i class="mr-3 fa fa-hand-o-up" style="font-size: 22px;cursor:pointer" (click)="upvoteMovie(movie)"></i>{{movie.upvotes}}</td>
+        <td><a routerLink="{{movie.id}}"><i class="mr-3 fa fa-long-arrow-right" style="font-size: 22px;"></i></a></td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>
